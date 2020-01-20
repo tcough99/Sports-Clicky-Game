@@ -20,13 +20,13 @@ class App extends Component {
     let clickedTeamIds = this.state.clickedTeamIds;
 
     if(clickedTeamIds.includes(id)){
-      this.setState({ clickedTeamIds: [], score: 0, status:  "Game Over! You lost. Click to play again!" });
+   this.setState({ clickedTeamIds: [], score: 0, status:  "Game Over! You lost. Click to play again!" });
       return;
     }else{
       clickedTeamIds.push(id)
 
       if(clickedTeamIds.length === 8){
-        this.setState({score: 8, status: "Touchdown! Click to play again!", clickedTeamIds: []});
+      this.setState({score: 8, status: "Touchdown! Click to play again!", clickedTeamIds: []});
         console.log('You Win');
         return;
       }
@@ -34,7 +34,7 @@ class App extends Component {
       this.setState({ nflLogo, clickedTeamIds, score: clickedTeamIds.length, status: " " });
 
       for (let i = nflLogo.length - 1; i > 0; i--) {
-        let j = Math.floor(Math.random() * (i + 1));
+                let j = Math.floor(Math.random() * (i + 1));
         [nflLogo[i], nflLogo[j]] = [nflLogo[j], nflLogo[i]];
       }
     }
